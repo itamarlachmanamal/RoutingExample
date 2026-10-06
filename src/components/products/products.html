@@ -1,0 +1,48 @@
+<div class="products-page">
+  <h2>חנות המוצרים</h2>
+
+  <!-- כפתורי סינון שמנווטים ל-URL שונה -->
+  <div class="category-filters">
+    <a 
+      routerLink="/products/all" 
+      [class.active]="selectedCategory === 'all'"
+      class="filter-btn"
+    >
+      הכל
+    </a>
+    <a 
+      routerLink="/products/electronics" 
+      [class.active]="selectedCategory === 'electronics'"
+      class="filter-btn"
+    >
+      אלקטרוניקה
+    </a>
+    <a 
+      routerLink="/products/clothing" 
+      [class.active]="selectedCategory === 'clothing'"
+      class="filter-btn"
+    >
+      ביגוד
+    </a>
+    <a 
+      routerLink="/products/home" 
+      [class.active]="selectedCategory === 'home'"
+      class="filter-btn"
+    >
+      לבית
+    </a>
+  </div>
+
+  <!-- רשת המוצרים -->
+  <div class="products-grid">
+    <div *ngFor="let product of filteredProducts" class="product-card">
+      <span class="category-tag">{{ product.category }}</span>
+      <h3>{{ product.name }}</h3>
+      <p class="price">₪{{ product.price }}</p>
+    </div>
+  </div>
+
+  <div *ngIf="filteredProducts.length === 0" class="no-results">
+    לא נמצאו מוצרים בקטגוריה זו.
+  </div>
+</div>

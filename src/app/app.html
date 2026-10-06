@@ -1,0 +1,45 @@
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <span>My</span>App
+    </div>
+    
+    <nav class="nav-links">
+      <a 
+        routerLink="/" 
+        routerLinkActive="active" 
+        [routerLinkActiveOptions]="{exact: true}"
+      >
+        <span class="icon">🏠</span> Home
+      </a>
+      
+      <a 
+        routerLink="/about" 
+        routerLinkActive="active"
+      >
+        <span class="icon">ℹ️</span> About
+      </a>
+      
+       <a 
+        routerLink="/products/all" 
+        routerLinkActive="active"
+      >
+        <span class="icon">⚒️</span> Products
+      </a>
+      
+
+      <a 
+        routerLink="/contact" 
+        routerLinkActive="active"
+      >
+        <span class="icon">✉️</span> Contact
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main class="main-content">
+  <div class="page-container">
+    <router-outlet></router-outlet>
+  </div>
+</main>
